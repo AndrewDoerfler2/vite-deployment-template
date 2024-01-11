@@ -1,0 +1,39 @@
+.helpful-links-card{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.helpful-links-card ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.helpful-links-card ul li{
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.helpful-links-card ul li a{
+    text-decoration: none;
+    color: #000;
+}
+
+.helpful-links-card ul li a:hover{
+    color: #000;
+    text-decoration: underline;
+}

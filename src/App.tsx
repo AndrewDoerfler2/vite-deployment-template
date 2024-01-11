@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.css';
+import LandingPage from './Components/Pages/Landing';
+import GitBranchingPage from './Components/Pages/GitBranchingPage';
+import TopNavigationBar from './Components/Navigation/TopNavigationBar';
+import DataIngestFlowPage from './Components/Pages/DataIngestFlowPage';
+import IntegrationProcessPage from './Components/Pages/IntegrationProcessPage';
+import OrgChartPage from './Components/Pages/OrgChartPage';
+import HelpfulLinksPage from './Components/Pages/HelpfulLinks';
+import DomainModelPage from './Components/Pages/DomainModel';
+import LoggingPage from './Components/Pages/LoggingPage';
+import DeveloperGuidelinesPage from './Components/Pages/DeveloperGuidelinesPage';
 function App() {
-  const [count, setCount] = useState(0)
+    
+    const baseURL = "vite-deployment-template";
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <div>
+        <TopNavigationBar />
+            <BrowserRouter>
+                <Routes>
+                    <Route path={baseURL+ "/"} element={<LandingPage />} />
+                    <Route path={baseURL+"/git-branching"} element={<GitBranchingPage />} />
+                    <Route path={baseURL+"/data-ingest-flow"} element={<DataIngestFlowPage />} />
+                    <Route path={baseURL+"/integration-process"} element={<IntegrationProcessPage />} />"
+                    <Route path={baseURL+"/org-chart"} element={<OrgChartPage />} />
+                    <Route path={baseURL+"/helpful-links"} element={<HelpfulLinksPage />} />"
+                    <Route path={baseURL+"/domain-model"} element={<DomainModelPage />} />
+                    <Route path={baseURL+"/logging-best-practices"} element={<LoggingPage />} />"
+                    <Route path={baseURL+"developer-syntax-guidelines"} element={<DeveloperGuidelinesPage />} />"
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
 
-export default App
+export default App;
